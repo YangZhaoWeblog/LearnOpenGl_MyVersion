@@ -9,5 +9,6 @@ uniform mat4 transform;
 void main()
 {
 	gl_Position = transform * vec4(aPos, 1.0);
-	TexCoord = vec2(aTexCoord.x, aTexCoord.y);
+	TexCoord = vec2(aTexCoord.x, 1.0 - aTexCoord.y); //使y轴翻转，不然纹理图像使反的
 }
+
